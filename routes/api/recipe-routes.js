@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Recipe, User, Vote} = require("../../models");
+const { Recipe, User, Vote, Category } = require("../../models");
 
 
 module.exports = router;

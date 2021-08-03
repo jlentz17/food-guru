@@ -1,7 +1,34 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Recipe extends Model {}
+// Still really confused on which attributes to include
+class Recipe extends Model {
+  static upvote(body, models) {
+    return models.Vote.create({
+      user_id: body.user_id,
+      recipe_id: body.recipe_id,
+    }).the(() => {
+      return Recipe.findOne({
+        where: {
+          id: body.recipe_id,
+        },
+        attributes: [
+          "id",
+          "title",
+          "ingredients",
+          "recipe_content",
+          "created_at",
+          [
+            sequelize.literal(
+              "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
+            ),
+            "vote_count",
+          ],
+        ],
+      });
+    });
+  }
+}
 
 Recipe.init(
   {
@@ -20,8 +47,8 @@ Recipe.init(
       allowNull: false,
     },
     recipe_content: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
