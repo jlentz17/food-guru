@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../../models");
+// // Tested rotes to make sure they were connected and hashed passwords correctly
 
 // router.get("/", (req, res) => {
 //   User.findAll()
@@ -10,7 +11,6 @@ const { User } = require("../../models");
 //     });
 // });
 
-// Tested rotes to make sure they were connected and hashed passwords correctly
 
 // router.post('/', (req, res) => {
 //     User.create({
