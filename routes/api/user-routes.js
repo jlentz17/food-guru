@@ -1,19 +1,18 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-router.get("/", (req, res) => {
-  User.findAll()
-    .then((dbUserData) => res.json(dbUserData))
-    .catch((err) => {
-      console.log(err);
-      res.statusCode(500).json(err);
-    });
-});
+// router.get("/", (req, res) => {
+//   User.findAll()
+//     .then((dbUserData) => res.json(dbUserData))
+//     .catch((err) => {
+//       console.log(err);
+//       res.statusCode(500).json(err);
+//     });
+// });
 
-// Tested rotes to make sure they were connected
+// Tested rotes to make sure they were connected and hashed passwords correctly
 
 // router.post('/', (req, res) => {
-//     // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
 //     User.create({
 //       username: req.body.username,
 //       email: req.body.email,
