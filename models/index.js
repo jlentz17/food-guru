@@ -2,6 +2,7 @@ const User = require("./User");
 const Recipe = require("./Recipe");
 const Vote = require("./Vote");
 const Category = require("./Category");
+const Ingredient = require("./Ingredient");
 
 User.hasMany(Recipe, {
   foreignKey: "user_id",
@@ -71,4 +72,13 @@ Recipe.hasMany(Category, {
   foreignKey: "recipe_id",
 });
 
-module.exports = { User, Recipe, Vote, Category };
+// Not sure if we need this to go along with another model...!!
+
+// Recipe.belongsToMany(Ingredient, {
+//     // through: "recipe_ingredients",
+//     foreignKey: "recipe_id"
+// })
+
+
+
+module.exports = { User, Recipe, Vote, Category, Ingredient };
