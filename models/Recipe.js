@@ -61,6 +61,10 @@ Recipe.init(
     ingredients: {
       type: DataTypes.STRING,
       allowNull: false,
+      references: {
+        model: "ingredient",
+        key: "ingredient_name"
+      }
     },
     recipe_content: {
       type: DataTypes.STRING,
@@ -72,6 +76,14 @@ Recipe.init(
         model: "user",
         key: "id",
       },
+    category_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "category",
+        key: "id"
+      }
+    }
     },
   },
   {

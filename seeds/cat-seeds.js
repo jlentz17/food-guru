@@ -1,4 +1,3 @@
-const sequelize = require('../config/connection');
 const { Category } = require('../models');
 
 const catdata = [
@@ -11,7 +10,7 @@ const catdata = [
     {
         category_name: 'Drinks'
     }
-]
+];
 
 const seedCategory = () => Category.bulkCreate(catdata);
 
