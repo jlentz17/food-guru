@@ -1,32 +1,43 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Category extends Model {};
+class Category extends Model {}
 
 Category.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        category_name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        recipe_id: {
-            type: DataTypes.INTEGER,
-            // allowNull: false? They don't have to add category to recipe if they don't want
-        }
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: "category"
-    }
-)
+    category_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    recipe_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "recipe",
+        key: "id",
+      },
+      // allowNull: false? They don't have to add category to recipe if they don't want
+    },
+    user_id: {
+      typ: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "category",
+  }
+);
 
 module.exports = Category;
