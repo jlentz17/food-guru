@@ -61,20 +61,20 @@ Recipe.hasMany(Vote, {
 //     foreignKey: "user_id"
 // })
 
-Category.belongsTo(User, {
-  foreignKey: "user_id",
-  onDelete: "SET NULL"
-});
+// Category.belongsTo(User, {
+//   foreignKey: "user_id",
+//   onDelete: "SET NULL"
+// });
 
 Category.belongsTo(Recipe, {
   foreignKey: "recipe_id",
   onDelete: "SET NULL"
 });
 
-User.hasMany(Category, {
-  foreignKey: "user_id",
-  onDelete: "SET NULL"
-});
+// User.hasMany(Category, {
+//   foreignKey: "user_id",
+//   onDelete: "SET NULL"
+// });
 
 Recipe.hasMany(Category, {
   foreignKey: "recipe_id",

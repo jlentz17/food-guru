@@ -15,21 +15,21 @@ Category.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    recipe_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "recipe",
-        key: "id",
-      },
+    // recipe_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "recipe",
+    //     key: "id",
+    //   },
       // allowNull: false? They don't have to add category to recipe if they don't want
-    },
-    user_id: {
-      typ: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
+   // },
+    // user_id: {
+    //   typ: DataTypes.INTEGER,
+    //   references: {
+    //     model: "user",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,
