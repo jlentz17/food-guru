@@ -10,4 +10,7 @@ router.get("/", (req, res) => {
         res.statusCode(500).json(err);
       });
   });
+
+
+
 module.exports = router;
