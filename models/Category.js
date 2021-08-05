@@ -24,7 +24,7 @@ Category.init(
       // allowNull: false? They don't have to add category to recipe if they don't want
     },
     user_id: {
-      typ: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       references: {
         model: "user",
         key: "id",
