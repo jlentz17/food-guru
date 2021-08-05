@@ -14,6 +14,9 @@ Category.init(
     category_name: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [1],
+      },
     },
     recipe_id: {
       type: DataTypes.INTEGER,
@@ -21,15 +24,7 @@ Category.init(
         model: "recipe",
         key: "id",
       },
-      // allowNull: false? They don't have to add category to recipe if they don't want
     },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "user",
-    //     key: "id",
-    //   },
-    // },
   },
   {
     sequelize,
