@@ -23,13 +23,13 @@ Category.init(
       },
       // allowNull: false? They don't have to add category to recipe if they don't want
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "user",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,
