@@ -1,6 +1,5 @@
 const seedUser = require('./user-seeds');
 const seedCategory = require('./cat-seeds');
-const seedIngredients = require('./ingredient-seeds');
 const seedRecipes = require('./recipe-seeds');
 const seedVotes = require('./vote-seeds');
 
@@ -16,9 +15,6 @@ const seedAll = async () => {
     console.log('--------------');
 
     await seedCategory();
-    console.log('--------------');
-
-    await seedIngredients();
     console.log('--------------');
 
     await seedRecipes();
