@@ -9,7 +9,7 @@ async function newFormHandler(event) {
       method: 'POST',
       body: JSON.stringify({
         title,
-        ingrediets,
+        ingredients,
         recipe_content
       }),
       headers: {
