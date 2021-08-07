@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
       attributes: [
         'id',
         'title',
-        'ingredient',
+        'ingredients',
         'recipe_content',
         'created_at',
         [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE recipe.id = vote.recipe_id)'), 'vote_count']
@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
   
         res.render('homepage', {
-          posts,
+          recipes,
           loggedIn: req.session.loggedIn
         });
       })
@@ -58,16 +58,13 @@ router.get('/', (req, res) => {
     })
       .then(dbPostData => {
         if (!dbPostData) {
-          res.status(404).json({ message: 'No post found with this id' });
+          res.status(404).json({ message: 'No recipe found with this id' });
           return;
         }
   
         const post = dbPostData.get({ plain: true });
   
-        res.render('single-recipe', {
-          post,
-          loggedIn: req.session.loggedIn
-        });
+        res.render('single-recipe');
       })
       .catch(err => {
         console.log(err);
