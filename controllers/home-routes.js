@@ -5,10 +5,9 @@ const { Recipe, User, Category, Vote } = require("../models")
 
 router.get('/', (req, res) => {
     console.log('======================');
-    Category.findAll({
+    Recipe.findAll({
       attributes: [
         'id',
-        'post_url',
         'title',
         'ingredient',
         'recipe_content',
