@@ -23,9 +23,9 @@
 <section>
   <h2>Your Recipes</h2>
   <ol>
-    {{#each recipe-info as |recipe|}}
+    {{#each recipes as |recipe|}}
     <li>
-      {{> post-info recipe}}
+      {{> recipe-info recipe}}
       <a href="/dashboard/edit/{{recipe.id}}" class="edit-link">Edit post</a>
     </li>
     {{/each}}
