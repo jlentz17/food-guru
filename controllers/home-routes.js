@@ -4,7 +4,7 @@ const { Recipe, User, Category, Vote } = require("../models")
 
 
 router.get('/', (req, res) => {
-    console.log('======================');
+    //console.log('======================');
     Recipe.findAll({
       attributes: [
         'id',
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
       ]
     })
       .then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
+        const recipes = dbPostData.map(post => post.get({ plain: true }));
   
         res.render('homepage', {
           recipes,
