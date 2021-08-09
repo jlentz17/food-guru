@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Category } = require("../../models");
-const withAuth = require("../../utils/auth")
+const withAuth = require("../../utils/auth");
   
 router.get("/", (req, res) => {
     Category.findAll()
@@ -11,7 +11,28 @@ router.get("/", (req, res) => {
       });
   });
 
-  router.post('/', (req, res) => {
+router.get('/:id', (req, res) => {
+  Category.findOne({
+    where: {
+      id: req.params.body
+    }
+  })
+  .then(dbCatData => {
+    if (!dbCatData){
+      res.status(404).json({ message: 'No Category found with this ID'});
+      return;
+    }
+    res.json(dbCatData);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+
+
+  })
+});
+
+router.post('/', (req, res) => {
     Category.create({
       category_name: req.body.category_name,
       recipe_id: req.body.recipe_id
@@ -21,7 +42,9 @@ router.get("/", (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  });
+});
   
+
+
 
 module.exports = router;

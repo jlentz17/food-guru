@@ -1,4 +1,36 @@
 
+<section>
+  <h2>Add New Recipe</h2>
 
+  <form class="new-recipe-form">
+    <div>
+      <label for="recipe-title">Title</label>
+      <input type="text" id="recipe-title" name="recipe-title" />
+    </div>
+    <div>
+      <label for="recipe-ingredients">Ingredients</label>
+      <input id="recipe-ingredients" name="recipe-ingredients" />
+    </div>
+    <div>
+      <label for="recipe-content">Recipe Content</label>
+      <input id="recipe-content" name="recipe-content" />
+    </div>
+    <button type="submit" class="btn">Create</button>
+  </form>
+</section>
+
+{{#if recipes.length}}
+<section>
+  <h2>Your Recipes</h2>
+  <ol>
+    {{#each recipe-info as |recipe|}}
+    <li>
+      {{> post-info recipe}}
+      <a href="/dashboard/edit/{{recipe.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
 
 <script src="/javascript/add-recipe.js"></script>
