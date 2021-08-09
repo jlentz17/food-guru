@@ -69,4 +69,4 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 ## Contributors
 
-Jazmyne Bradley <br> David Lopez <br> Jeremy Lentz <br> <jlentz17@gmail.com> <br> &copy; 2020 Jazmyne Bradley, David Lopez, Jeremy Lentz  All rights reserved.
+Jazmyne Bradley <br> David Lopez <br> Jeremy Lentz <br> <jlentz17@gmail.com> <br> &copy; 2021 Jazmyne Bradley, David Lopez, Jeremy Lentz  All rights reserved.
