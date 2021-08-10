@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-// Still really confused on which attributes to include
+// Create a method to call this for upvote logic
 class Recipe extends Model {
   static upvote(body, models) {
     return models.Vote.create({
@@ -46,6 +46,7 @@ class Recipe extends Model {
   }
 }
 
+// Set up table and properties/attributes
 Recipe.init(
   {
     id: {
@@ -82,4 +83,5 @@ Recipe.init(
   }
 );
 
+// Export
 module.exports = Recipe;

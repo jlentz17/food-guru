@@ -1,7 +1,9 @@
+// Bring in router, sequelize, and models
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Recipe, User, Category, Comment } = require("../models");
 
+// Get all recipes
 router.get("/", (req, res) => {
   //console.log('======================');
   Recipe.findAll({
@@ -112,6 +114,7 @@ router.get("/recipe/:id", (req, res) => {
     });
 });
 
+// Login route!
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
@@ -121,4 +124,5 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+// Export
 module.exports = router;

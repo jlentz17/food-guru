@@ -1,8 +1,10 @@
+// Bring in DataTypes and Model and sequelize
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class Category extends Model {}
 
+// Set up table and properties/attributes
 Category.init(
   {
     id: {
@@ -35,4 +37,5 @@ Category.init(
   }
 );
 
+// Export model
 module.exports = Category;

@@ -1,8 +1,10 @@
+// Bring in router, models, sequelize, and authorization file
 const router = require("express").Router();
 const { Recipe, User, Vote, Category, Comment } = require("../../models");
 const sequelize = require("../../config/connection");
 const withAuth = require("../../utils/auth");
 
+// Get all recipes
 router.get("/", (req, res) => {
   Recipe.findAll({
     attributes: [
@@ -47,6 +49,7 @@ router.get("/", (req, res) => {
     });
 });
 
+// Get recipe by id
 router.get("/:id", (req, res) => {
   Recipe.findOne({
     where: {
@@ -99,6 +102,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// Update recipe
 router.post("/", withAuth, (req, res) => {
   console.log("postHit")
   Recipe.create({
@@ -114,6 +118,8 @@ router.post("/", withAuth, (req, res) => {
     });
     console.log("endPost")
 });
+
+// Upvote recipe
 router.put("/upvote", (req, res) => {
   if (req.session) {
 
@@ -126,6 +132,7 @@ router.put("/upvote", (req, res) => {
   }
 });
 
+// Update recipe
 router.put("/:id", withAuth, (req, res) => {
   Recipe.update(
     {
@@ -150,6 +157,7 @@ router.put("/:id", withAuth, (req, res) => {
     });
 });
 
+// Delete recipe
 router.delete("/:id", withAuth, (req, res) => {
   Recipe.destroy({
     where: {
@@ -169,4 +177,5 @@ router.delete("/:id", withAuth, (req, res) => {
     });
 });
 
+// Export
 module.exports = router;

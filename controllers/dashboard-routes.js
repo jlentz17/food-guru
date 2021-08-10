@@ -1,9 +1,10 @@
+// Bring in router, sequelize, models, and authorization file
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Recipe, User, Category, Vote, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
-
+// Get all recipes
 router.get('/', withAuth, (req, res) => {
     console.log(req.session);
     console.log('======================');
@@ -43,9 +44,9 @@ router.get('/', withAuth, (req, res) => {
         res.status(500).json(err);
       });
   });
-  
-  router.get('/edit/:id', withAuth, (req, res) => {
-    Recipe.findByPk(req.params.id, {
+  // Edit Recipe
+  router.put('/edit/:id', withAuth, (req, res) => {
+    Recipe.update(req.params.id, {
       attributes: [
         'id',
         'title',

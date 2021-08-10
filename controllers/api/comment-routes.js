@@ -1,7 +1,9 @@
+// Bring in router, comment model, and authorization file
 const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Get all comments
 router.get('/', (req, res) => {
   Comment.findAll()
     .then(dbCommentData => res.json(dbCommentData))
@@ -11,6 +13,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// Post a comment
 router.post('/', withAuth, (req, res) => {
     if (req.session) {
   // expects => {comment_text: "This is the comment", user_id: 1, recipe_id: 2}
@@ -27,6 +30,7 @@ router.post('/', withAuth, (req, res) => {
 }
 });
 
+// Delete a comment
 router.delete('/:id', withAuth, (req, res) => {
   Comment.destroy({
     where: {

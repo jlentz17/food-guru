@@ -1,10 +1,11 @@
+// Bring in all the models
 const User = require("./User");
 const Recipe = require("./Recipe");
 const Vote = require("./Vote");
 const Category = require("./Category");
 const Comment = require("./Comment")
-// const Ingredient = require("./Ingredient");
 
+// Set up associations between tables
 User.hasMany(Recipe, {
   foreignKey: "user_id",
 });
@@ -71,6 +72,6 @@ Recipe.hasMany(Category, {
   // onDelete: "SET NULL",
 });
 
-
+// Export all models
 module.exports = { User, Recipe, Vote, Category, Comment};
 // module.exports = { User, Recipe, Vote, Comment};

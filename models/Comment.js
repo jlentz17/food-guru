@@ -1,8 +1,10 @@
+// Bring in DataTypes and Model and sequelize
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Comment extends Model {}
 
+// Set up table and properties/attributes
 Comment.init(
   {
     id: {
@@ -42,4 +44,5 @@ Comment.init(
   }
 );
 
+// Export
 module.exports = Comment;

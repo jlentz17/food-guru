@@ -1,7 +1,9 @@
+// Bring in router, and models
 const router = require("express").Router();
 const { User, Recipe, Category, Vote, Comment } = require("../../models");
-// // Tested rotes to make sure they were connected and hashed passwords correctly
+// // Tested routes to make sure they were connected and hashed passwords correctly
 
+// Get all users
 router.get("/", (req, res) => {
   User.findAll({
     attributes: { exclude: ["password"] },
@@ -13,6 +15,7 @@ router.get("/", (req, res) => {
     });
 });
 
+// Get user by id
 router.get("/:id", (req, res) => {
   User.findOne({
     attributes: { exclude: ["password"] },
@@ -59,6 +62,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// Create a user
 router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
@@ -80,6 +84,7 @@ router.post("/", (req, res) => {
   });
 });
 
+// Login route!
 router.post("/login", (req, res) => {
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
@@ -109,6 +114,7 @@ router.post("/login", (req, res) => {
   });
 });
 
+// Logout route!
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -119,7 +125,7 @@ router.post("/logout", (req, res) => {
   }
 });
 
-// PUT /api/users/1
+// Update User
 router.put("/:id", (req, res) => {
   User.update(req.body, {
     individualHooks: true,
@@ -140,7 +146,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-// DELETE /api/users/1
+// Delete User
 router.delete("/:id", (req, res) => {
   User.destroy({
     where: {
@@ -160,4 +166,5 @@ router.delete("/:id", (req, res) => {
     });
 });
 
+// Export
 module.exports = router;

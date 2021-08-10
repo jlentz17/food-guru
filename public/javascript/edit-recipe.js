@@ -21,8 +21,6 @@ async function editFormHandler(event) {
   }
 }
 
-// document
-//   .querySelector(".edit-post")
-//   .addEventListener("submit", editFormHandler);
+
 document.querySelector(".edit-recipe-form")
   .addEventListener("submit", editFormHandler);
