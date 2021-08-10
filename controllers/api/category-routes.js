@@ -1,7 +1,9 @@
+// Bring in router, category model, and authorization file
 const router = require("express").Router();
 const { Category } = require("../../models");
 const withAuth = require("../../utils/auth");
-  
+
+// Get all categories
 router.get("/", (req, res) => {
     Category.findAll()
       .then((dbUserData) => res.json(dbUserData))
@@ -11,6 +13,7 @@ router.get("/", (req, res) => {
       });
   });
 
+// Get category by id 
 router.get('/:id', (req, res) => {
   Category.findOne({
     where: {
@@ -32,6 +35,7 @@ router.get('/:id', (req, res) => {
   })
 });
 
+// Create a category
 router.post('/', (req, res) => {
     Category.create({
       category_name: req.body.category_name,

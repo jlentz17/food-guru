@@ -1,6 +1,7 @@
-const seedUser = require('./user-seeds');
+const seedUsers = require('./user-seeds');
 const seedCategory = require('./cat-seeds');
 const seedRecipes = require('./recipe-seeds');
+const seedComments = require("./comment-seeds")
 const seedVotes = require('./vote-seeds');
 
 
@@ -11,7 +12,7 @@ const seedAll = async () => {
     await sequelize.sync({ force: true });
     console.log('--------------');
 
-    await seedUser();
+    await seedUsers();
     console.log('--------------');
 
     await seedCategory();
@@ -20,7 +21,11 @@ const seedAll = async () => {
     await seedRecipes();
     console.log('--------------');
 
+    
     await seedVotes();
+    console.log('--------------');
+    
+    await seedComments();
     console.log('--------------');
 
 

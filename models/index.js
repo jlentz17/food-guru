@@ -1,16 +1,18 @@
+// Bring in all the models
 const User = require("./User");
 const Recipe = require("./Recipe");
 const Vote = require("./Vote");
 const Category = require("./Category");
-// const Ingredient = require("./Ingredient");
+const Comment = require("./Comment")
 
+// Set up associations between tables
 User.hasMany(Recipe, {
   foreignKey: "user_id",
 });
 
 Recipe.belongsTo(User, {
   foreignKey: "user_id",
-  onDelete: "SET NULL"
+  // onDelete: "SET NULL",
 });
 
 User.belongsToMany(Recipe, {
@@ -27,12 +29,12 @@ Recipe.belongsToMany(User, {
 
 Vote.belongsTo(User, {
   foreignKey: "user_id",
-  onDelete: "SET NULL"
+  // onDelete: "SET NULL",
 });
 
 Vote.belongsTo(Recipe, {
   foreignKey: "recipe_id",
-  onDelete: "SET NULL"
+  // onDelete: "SET NULL",
 });
 
 User.hasMany(Vote, {
@@ -44,17 +46,32 @@ Recipe.hasMany(Vote, {
 });
 
 
-Category.belongsTo(Recipe, {
-  foreignKey: "recipe_id",
-  onDelete: "SET NULL"
-});
+Comment.belongsTo(User, {
+  foreign_key: "user_id"
+})
 
+Comment.belongsTo(Recipe, {
+  foreignKey: "recipe_id"
+})
 
-Recipe.hasMany(Category, {
-  foreignKey: "recipe_id",
-  onDelete: "SET NULL"
-});
+User.hasMany(Comment, {
+  foreignKey: "user_id"
+})
 
+Recipe.hasMany(Comment, {
+  forign_key: "recipe_id"
+})
 
+// Category.belongsTo(Recipe, {
+//   foreignKey: "recipe_id",
+//   // onDelete: "SET NULL",
+// });
 
-module.exports = { User, Recipe, Vote, Category };
+// Recipe.hasMany(Category, {
+//   foreignKey: "recipe_id",
+//   // onDelete: "SET NULL",
+// });
+
+// Export all models
+module.exports = { User, Recipe, Vote, Category, Comment};
+// module.exports = { User, Recipe, Vote, Comment};
