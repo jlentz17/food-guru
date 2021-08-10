@@ -11,37 +11,37 @@ router.get('/', withAuth, (req, res) => {
     Recipe.findAll({
       where: {
         user_id: req.session.user_id
-      }
-      // attributes: [
-      //   'id',
-      //   'title',
-      //   'ingredients',
-      //   'recipe_content',
-      //   'created_at',
-      //   [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE recipe.id = vote.recipe_id)'), 'vote_count']
-      // ],
-      // include: [
-      //   {
-      //     model: Comment,
-      //     attributes: ["id", "comment_text", "recipe_id", "user_id", "created_at"],
-      //     include: {
-      //       model: User,
-      //       attributes: ["username"],
-      //     },
-      //   },
-      //   {
-      //     model: User,
-      //     attributes: ["username"],
-      //   },
-      // ],
+      },
+      attributes: [
+        'id',
+        'title',
+        'ingredients',
+        'recipe_content',
+        'created_at',
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE recipe.id = vote.recipe_id)'), 'vote_count']
+      ],
+      include: [
+        {
+          model: Comment,
+          attributes: ["id", "comment_text", "recipe_id", "user_id", "created_at"],
+          include: {
+            model: User,
+            attributes: ["username"],
+          },
+        },
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
     })
       .then(dbRecipeData => {
         console.log(dbRecipeData)
         const userRecipes = dbRecipeData.map(recipe => recipe.get({ 
           plain: true }));
           console.log(userRecipes)
-          console.log(dbRecipeData[0])
-        res.render('dashboard', { userRecipes });
+          console.log(dbRecipeData)
+        res.render('dashboard', { userRecipes, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
