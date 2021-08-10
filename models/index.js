@@ -2,6 +2,7 @@ const User = require("./User");
 const Recipe = require("./Recipe");
 const Vote = require("./Vote");
 const Category = require("./Category");
+const Comment = require("./Comment")
 // const Ingredient = require("./Ingredient");
 
 User.hasMany(Recipe, {
@@ -10,7 +11,7 @@ User.hasMany(Recipe, {
 
 Recipe.belongsTo(User, {
   foreignKey: "user_id",
-  onDelete: "SET NULL",
+  // onDelete: "SET NULL",
 });
 
 User.belongsToMany(Recipe, {
@@ -27,12 +28,12 @@ Recipe.belongsToMany(User, {
 
 Vote.belongsTo(User, {
   foreignKey: "user_id",
-  onDelete: "SET NULL",
+  // onDelete: "SET NULL",
 });
 
 Vote.belongsTo(Recipe, {
   foreignKey: "recipe_id",
-  onDelete: "SET NULL",
+  // onDelete: "SET NULL",
 });
 
 User.hasMany(Vote, {
@@ -43,14 +44,32 @@ Recipe.hasMany(Vote, {
   foreignKey: "recipe_id",
 });
 
+
+Comment.belongsTo(User, {
+  foreign_key: "user_id"
+})
+
+Comment.belongsTo(Recipe, {
+  foreignKey: "recipe_id"
+})
+
+User.hasMany(Comment, {
+  foreignKey: "user_id"
+})
+
+Recipe.hasMany(Comment, {
+  forign_key: "recipe_id"
+})
+
 Category.belongsTo(Recipe, {
   foreignKey: "recipe_id",
-  onDelete: "SET NULL",
+  // onDelete: "SET NULL",
 });
 
 Recipe.hasMany(Category, {
   foreignKey: "recipe_id",
-  onDelete: "SET NULL",
+  // onDelete: "SET NULL",
 });
 
-module.exports = { User, Recipe, Vote, Category };
+
+module.exports = { User, Recipe, Vote, Category, Comment};

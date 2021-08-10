@@ -15,7 +15,9 @@
       <label for="recipe-content">Recipe Content</label>
       <input id="recipe-content" name="recipe-content" />
     </div>
-    <button type="submit" class="btn">Create</button>
+    <div>
+      <button type="submit" id="newRecipe" class="btn">Create</button>
+    </div>
   </form>
 </section>
 
@@ -23,10 +25,10 @@
 <section>
   <h2>Your Recipes</h2>
   <ol>
-    {{#each recipe-info as |recipe|}}
+    {{#each recipes as |recipe|}}
     <li>
-      {{> post-info recipe}}
-      <a href="/dashboard/edit/{{recipe.id}}" class="edit-link">Edit post</a>
+      {{> recipe-info recipe}}
+      <a href="/dashboard/edit/{{recipe.id}}" class="edit-link">Edit Recipe</a>
     </li>
     {{/each}}
   </ol>

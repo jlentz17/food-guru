@@ -22,15 +22,15 @@ class Recipe extends Model {
             sequelize.literal(
               "(SELECT COUNT(*) FROM vote WHERE recipe.id = vote.recipe_id)"
             ),
-            "vote_count",
+            "vote_count"
           ],
         ],
         include: [
           {
-            model: models.Category,
+            model: models.Comment,
             attributes: [
               "id",
-              "category_name",
+              "comment_text",
               "recipe_id",
               "user_id",
               "created_at",
