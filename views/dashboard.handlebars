@@ -19,7 +19,9 @@
       <button type="submit" id="newRecipe" class="btn">Create</button>
     </div>
   </form>
-</section>
+
+{{!-- <button id="newRecipe">fcgvjhbkjn</button>
+</section> --}}
 
 {{#if recipes.length}}
 <section>
@@ -28,6 +30,7 @@
     {{#each recipes as |recipe|}}
     <li>
       {{> recipe-info recipe}}
+      <br>
       <a href="/dashboard/edit/{{recipe.id}}" class="edit-link">Edit Recipe</a>
     </li>
     {{/each}}

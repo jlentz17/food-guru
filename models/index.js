@@ -73,3 +73,4 @@ Recipe.hasMany(Category, {
 
 
 module.exports = { User, Recipe, Vote, Category, Comment};
+// module.exports = { User, Recipe, Vote, Comment};

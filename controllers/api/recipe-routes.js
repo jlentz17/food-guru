@@ -100,6 +100,7 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", withAuth, (req, res) => {
+  console.log("postHit")
   Recipe.create({
     title: req.body.title,
     ingredients: req.body.ingredients,
@@ -111,6 +112,7 @@ router.post("/", withAuth, (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+    console.log("endPost")
 });
 router.put("/upvote", (req, res) => {
   if (req.session) {
