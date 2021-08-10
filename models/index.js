@@ -62,15 +62,15 @@ Recipe.hasMany(Comment, {
   forign_key: "recipe_id"
 })
 
-Category.belongsTo(Recipe, {
-  foreignKey: "recipe_id",
-  // onDelete: "SET NULL",
-});
+// Category.belongsTo(Recipe, {
+//   foreignKey: "recipe_id",
+//   // onDelete: "SET NULL",
+// });
 
-Recipe.hasMany(Category, {
-  foreignKey: "recipe_id",
-  // onDelete: "SET NULL",
-});
+// Recipe.hasMany(Category, {
+//   foreignKey: "recipe_id",
+//   // onDelete: "SET NULL",
+// });
 
 // Export all models
 module.exports = { User, Recipe, Vote, Category, Comment};

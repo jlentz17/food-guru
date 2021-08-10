@@ -109,7 +109,7 @@ router.post("/", withAuth, (req, res) => {
     title: req.body.title,
     ingredients: req.body.ingredients,
     recipe_content: req.body.recipe_content,
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
   })
     .then((dbRecipeData) => res.json(dbRecipeData))
     .catch((err) => {
