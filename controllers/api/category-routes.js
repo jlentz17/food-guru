@@ -35,18 +35,18 @@ router.get('/:id', (req, res) => {
   })
 });
 
-// Create a category
-router.post('/', (req, res) => {
-    Category.create({
-      category_name: req.body.category_name,
-      recipe_id: req.body.recipe_id
-    })
-      .then(dbUserData => res.json(dbUserData))
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-});
+// // Create a category
+// router.post('/', (req, res) => {
+//     Category.create({
+//       category_name: req.body.category_name,
+//       recipe_id: req.body.recipe_id
+//     })
+//       .then(dbUserData => res.json(dbUserData))
+//       .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//       });
+// });
   
 
 
