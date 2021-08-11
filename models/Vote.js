@@ -1,8 +1,10 @@
+// Bring in DataTypes and Model and sequelize
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class Vote extends Model {}
 
+// Set up table and properties/attributes
 Vote.init(
   {
     id: {
@@ -36,4 +38,5 @@ Vote.init(
   }
 );
 
+// Export
 module.exports = Vote;

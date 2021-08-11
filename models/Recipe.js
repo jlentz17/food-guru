@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-// Still really confused on which attributes to include
+// Create a method to call this for upvote logic
 class Recipe extends Model {
   static upvote(body, models) {
     return models.Vote.create({
@@ -22,15 +22,15 @@ class Recipe extends Model {
             sequelize.literal(
               "(SELECT COUNT(*) FROM vote WHERE recipe.id = vote.recipe_id)"
             ),
-            "vote_count",
+            "vote_count"
           ],
         ],
         include: [
           {
-            model: models.Category,
+            model: models.Comment,
             attributes: [
               "id",
-              "category_name",
+              "comment_text",
               "recipe_id",
               "user_id",
               "created_at",
@@ -46,6 +46,7 @@ class Recipe extends Model {
   }
 }
 
+// Set up table and properties/attributes
 Recipe.init(
   {
     id: {
@@ -63,7 +64,7 @@ Recipe.init(
       allowNull: false,
     },
     recipe_content: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     user_id: {
@@ -82,4 +83,5 @@ Recipe.init(
   }
 );
 
+// Export
 module.exports = Recipe;

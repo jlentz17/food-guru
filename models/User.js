@@ -1,13 +1,15 @@
+// Bring in Model, DataTypes, sequelize, and brypt package
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 const bcrypt = require("bcrypt");
 
+// Set up bcrypt password hashing
 class User extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-
+// Set up table and properties/attributes
 User.init(
   {
     id: {
@@ -58,4 +60,5 @@ User.init(
   }
 );
 
+// Export
 module.exports = User;

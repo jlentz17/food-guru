@@ -1,8 +1,10 @@
+// Bring in DataTypes and Model and sequelize
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class Category extends Model {}
 
+// Set up table and properties/attributes
 Category.init(
   {
     id: {
@@ -14,19 +16,14 @@ Category.init(
     category_name: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [1],
+      },
     },
     recipe_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "recipe",
-        key: "id",
-      },
-      // allowNull: false? They don't have to add category to recipe if they don't want
-    },
-    user_id: {
-      typ: DataTypes.INTEGER,
-      references: {
-        model: "user",
         key: "id",
       },
     },
@@ -40,4 +37,5 @@ Category.init(
   }
 );
 
+// Export model
 module.exports = Category;
