@@ -30,9 +30,9 @@
     {{#each userRecipes as |recipe|}}
     <li>
       {{> recipe-info recipe}}
-      <br><br>
-      <a href="/dashboard/edit/{{recipe.id}}" class="edit-link">Edit Recipe</a>
-    </li>
+      <br>
+      <a href="/edit/recipe/{{recipe.id}}" class="edit-link">Edit Recipe</a>
+    </li><br>
     {{/each}}
   </ol>
 </section>
