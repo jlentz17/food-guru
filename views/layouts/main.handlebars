@@ -21,13 +21,13 @@
           <a href="/dashboard" class="btn-no-style">Dashboard</a>
           <button id="logout" class="btn-no-style">Logout</button>
           {{else}}
-          <div class="login-btn"><a href="/login" class="nav-txt">login</a></div>
+          <div class="login-btn"><a href="/login" id="login-btn" class="nav-txt">login</a></div>
           {{/if}}
         </div>
       </nav>
     </header>
 {{{body}}}
-    <main class="main-container">
+    <main id="main-container" class="main-container">
       <div class="main-inner-content">
         <h3 class="feature-name">FOOD GURU</h3>
         <h2 class="feature-font">Dinner ideas <br>are on us!</h2>
@@ -44,6 +44,7 @@
       &copy Food Guru 2047
     </div>
   </footer>
+
 
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>

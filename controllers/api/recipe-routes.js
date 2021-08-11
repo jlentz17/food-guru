@@ -134,9 +134,12 @@ router.put("/upvote", (req, res) => {
 
 // Update recipe
 router.put("/:id", withAuth, (req, res) => {
+  console.log("===========", req.body)
   Recipe.update(
     {
       title: req.body.title,
+      content: req.body.content,
+      ingredients: req.body.ingredients
     },
     {
       where: {
