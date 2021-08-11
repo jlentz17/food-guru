@@ -1,6 +1,6 @@
 # The Food Guru
 
-[For deployed version, click me!!!](https://secure-forest-24217.herokuapp.com/)<br>
+[For deployed version, click me!!!](https://secure-forest-24217.herokuapp.com/)<br><br>
 [GitHub:]((https://github.com/jlentz17/food-guru))<br>
 
 In the fifteenth week of bootcamp, we were given the assignment of creating a full-stack web application using JavaScript, Node.js, Express.js, Handlebars.js, MySql and Sequelize, along with a RESTful API, and used a folder structure that meets MVC paradigm.
