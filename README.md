@@ -1,6 +1,7 @@
 # The Food Guru
 
-[For deployed version, click me!!!](https://github.com/jlentz17/food-guru)
+[For deployed version, click me!!!](https://secure-forest-24217.herokuapp.com/)
+[GitHub:]((https://github.com/jlentz17/food-guru))
 
 In the fifteenth week of bootcamp, we were given the assignment of creating a full-stack web application using JavaScript, Node.js, Express.js, Handlebars.js, MySql and Sequelize, along with a RESTful API, and used a folder structure that meets MVC paradigm.
 
@@ -69,4 +70,4 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 ## Contributors
 
-Jazmyne Bradley <br> David Lopez <br> Jeremy Lentz <br> <jlentz17@gmail.com> <br> &copy; 2021 Jazmyne Bradley, David Lopez, Jeremy Lentz  All rights reserved.
+Jazmyne Bradley <br> <bradleyj1@email.arizona.edu> David Lopez <davelpz15@gmail.com> <br> Jeremy Lentz <br> <jlentz17@gmail.com> <br> &copy; 2021 Jazmyne Bradley, David Lopez, Jeremy Lentz  All rights reserved.
