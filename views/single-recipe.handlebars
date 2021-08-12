@@ -3,11 +3,11 @@
 {{#if loggedIn}}
 <form class="form-comment">
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea name="comment-body" placeholder="Leave a comment or upvote if ya want . . ." class="comment-body"></textarea>
   </div>
-  <div>
-    <button type="submit">Add Comment</button>
-    <button type="button" class="upvote-btn">Upvote</button>
+  <div class="comment-btn-container">
+    <button type="button" class="comment-container-btns">Upvote</button>
+    <button type="submit" class="comment-container-btns">Add Comment</button>
   </div>
 </form>
 {{/if}}

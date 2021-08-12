@@ -5,6 +5,10 @@
     font-family: 'Poppins';
 }
 
+body {
+    height: 100vh;
+}
+
 :root {
     --prmry-color: #F4BA84;
     --scndry-color: #595959;
@@ -125,6 +129,7 @@
     background-color: rgba(0, 0, 0, 0.1);
     border: none;
     border-radius: 15px;
+    padding-left: 10px;
 }
 
 .login-form input:focus, .signup-form input:focus {
@@ -222,6 +227,10 @@
 
 .your-recipe-inner-content {
     padding: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    margin: 10px;
 }
 
 .your-recipe-header {
@@ -331,15 +340,15 @@
 }
 
 /* comments page --------------------------------------------*/
-/* .new-recipe-container {
+/* .home-recipes {
     background-color: var(--prmry-color);
     border-radius: 15px;
     margin: 200px 30px 20px 30px;
     padding: 10px;
     height: 410px;
-}
+} */
 
-.new-recipe-inner {
+/* .new-recipe-inner {
     background-color: white;
     border-radius: 15px;
     padding: 30px;
@@ -355,3 +364,68 @@
     padding: 10px 30px;
     font-size: 20px;
 } */
+
+.comment-body {
+    margin: 10px;
+    width: 97vw;
+    height: 200px;
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.comment-body:focus {
+    outline: none;
+    border: none;
+}
+
+.comment-btn-container {
+    display: grid;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-container-btns {
+    background-color: var(--prmry-color);
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px 0;
+    color: white;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    transition: .5s ease;
+}
+
+.comment-container-btns:hover {
+    background-color: var(--scndry-color);
+    transition: .5s ease;
+}
+
+/* comments ------------------------*/
+.comments {
+    margin: 30px;
+    background-color: var(--prmry-color);
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.meta {
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
+
+.text {
+    margin: 0px 0px 30px 0px;
+    color: var(--text-scndry);
+    font-size: 18px;
+}
+
+.comment-line {
+    width: 5%;
+    border: solid black 1px;
+    margin: 10px 0;
+}
