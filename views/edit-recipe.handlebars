@@ -2,15 +2,15 @@
   <a href="/dashboard">&larr; Back To Dashboard</a>
   <h2>Edit That Recipe</h2>
   <form class="edit-recipe-form">
-    <div>
+    <div class="your-recipe-title">
       <label for="recipe-title">Title:</label>
-      <input name="recipe-title" type="text" id="recipe-title" value="{{recipe.title}}" />
+      <input name="recipe-title" type="text" id="recipe-title"  value="{{recipe.title}}" />
     </div>
-    <div>
+    <div class="your-recipe-subtitle">
       <label for="recipe-content">Recipe Content:</label>
       <input name="recipe-content" type="text" id="recipe-content" value="{{recipe.content}}"/>
     </div>
-    <div>
+    <div class="your-recipe-subtitle">
       <label for="recipe-ingredients">Ingredients:</label>
       <input name="recipe-ingredients" type="text" id="recipe-ingredients" value="{{recipe.ingredients}}"/>
     </div>
@@ -24,8 +24,8 @@
         {{format_plural "comment" recipe.comments.length}}</a>
     </div>
     <div>
-      <button type="submit">Save Recipe</button>
-      <button type="button" class="delete-recipe-btn">Delete Recipe</button>
+      <button type="submit" class="edit-link">Save Recipe</button>
+      <button type="button" class="delete-recipe-btn edit-link">Delete Recipe</button>
     </div>
   </form>
 </article>
