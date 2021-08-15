@@ -1,7 +1,17 @@
-<ol class="recipe-list">
-  {{#each recipes as |recipe|}}
+{{!-- <ol class="recipe-list">
+  <h2>
+  {{#each recipes as |recipe|}}<br>
+  </h2>
   <li>
+    <h3>
     {{> recipe-info recipe }}
+    </h3>
   </li>
   {{/each}}
-</ol>
+</ol> --}}
+
+<br>
+<br>
+<a  href="/api/categories/1">Main Entrees</a>
+<a href="/api/categories/2">Drinks</a>
+<a href="/api/categories/3">Dessert</a>

@@ -5,10 +5,10 @@ const catdata = [
         category_name: 'Entree'
     },
     {
-        category_name: 'Dessert'
+        category_name: 'Drinks'
     },
     {
-        category_name: 'Drinks'
+        category_name: 'Dessert'
     }
 ];
 

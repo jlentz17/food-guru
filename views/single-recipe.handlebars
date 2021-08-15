@@ -1,4 +1,20 @@
+{{> recipe-info recipe}}
 
+{{#if loggedIn}}
+<form class="form-comment">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+  <div>
+    <button type="submit">Add Comment</button>
+    <button type="button" class="upvote-btn">Upvote</button>
+  </div>
+</form>
+{{/if}}
 
-<script src="/javascript/category.js"></script>
+{{> comments recipe.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
 <script src="/javascript/upvote.js"></script>
+{{/if}}

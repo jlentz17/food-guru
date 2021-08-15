@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const { Category } = require("../../models");
+const { Category, Recipe } = require("../../models");
+const sequelize = require('../../config/connection');
 const withAuth = require("../../utils/auth");
   
 router.get("/", (req, res) => {
@@ -14,8 +15,15 @@ router.get("/", (req, res) => {
 router.get('/:id', (req, res) => {
   Category.findOne({
     where: {
-      id: req.params.body
-    }
+      id: req.params.id
+    },
+    include: [
+      {
+      model: Recipe,
+      attributes: [
+        'id', 'title', 'ingredients', 'recipe_content', 'user_id']
+      }
+    ]
   })
   .then(dbCatData => {
     if (!dbCatData){

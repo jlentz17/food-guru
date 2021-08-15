@@ -66,6 +66,14 @@ Recipe.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    category_id: {
+      type: DataTypes.INTEGER,
+      allowNUll: false,
+      refernces: {
+        model: "category",
+        key: "id"
+      }
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
