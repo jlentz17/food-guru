@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 async function newFormHandler(event) {
   event.preventDefault();
   console.log(event)
@@ -9,8 +11,8 @@ async function newFormHandler(event) {
     'input[name="recipe-content"]'
   ).value;
 
-  const response = await fetch("/api/recipes", {
-    method: "POST",
+  const response = await axios.post("/api/recipes", {
+    // method: "POST",
     body: JSON.stringify({
       title,
       ingredients,

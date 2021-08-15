@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 async function commentFormHandler(event) {
     event.preventDefault();
   
@@ -9,8 +11,8 @@ async function commentFormHandler(event) {
     ];
     if (comment_text);
   
-    const response = await fetch("/api/comments", {
-      method: "POST",
+    const response = await axios.post("/api/comments", {
+      // method: "POST",
       body: JSON.stringify({
         recipe_id,
         comment_text,

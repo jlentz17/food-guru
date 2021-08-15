@@ -6,7 +6,7 @@
 In the fifteenth week of bootcamp, we were given the assignment of creating a full-stack web application using JavaScript, Node.js, Express.js, Handlebars.js, MySql and Sequelize, along with a RESTful API, and used a folder structure that meets MVC paradigm.
 
 
-![Image of The Food Guru App]()
+![Image of The Food Guru App](/public/assets/food-guru-homepage.png)
 
 # Description 
 

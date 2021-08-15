@@ -1,6 +1,8 @@
+const axios = require("axios");
+
 async function logout() {
-    const response = await fetch('/api/users/logout', {
-      method: 'POST',
+    const response = await axios.post('/api/users/logout', {
+      // method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     });
   

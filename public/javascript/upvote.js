@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 async function upvoteClickHandler(event) {
     event.preventDefault();
   
@@ -5,8 +7,8 @@ async function upvoteClickHandler(event) {
       window.location.toString().split('/').length - 1
     ];
   
-    const response = await fetch('/api/recipes/upvote', {
-        method: 'PUT',
+    const response = await axios.put('/api/recipes/upvote', {
+        // method: 'PUT',
         body: JSON.stringify({
           recipe_id: id
         }),
