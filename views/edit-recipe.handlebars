@@ -1,18 +1,19 @@
 <article>
-  <a href="/dashboard">&larr; Back To Dashboard</a>
-  <h2>Edit That Recipe</h2>
+  <h1><a href="/dashboard">&larr; Back To Dashboard</a>
+  </h1><br>
+  <h2 class="edit-that-recipe">Edit That Recipe</h2>
   <form class="edit-recipe-form recipe-content-container">
     <div class="your-recipe-title">
       <label for="recipe-title">Title:</label>
-      <input name="recipe-title" type="text" id="recipe-title"  value="{{recipe.title}}" />
+      <input name="recipe-title" type="text" id="recipe-title"  value="{{recipe.title}}" /> <br><br>
     </div>
     <div class="your-recipe-subtitle">
       <label for="recipe-content">Recipe Content:</label>
-      <input name="recipe-content" type="text" id="recipe-content" value="{{recipe.content}}"/>
+      <input name="recipe-content" type="text" id="recipe-content" value="{{recipe.content}}"/> <br><br>
     </div>
     <div class="your-recipe-subtitle">
       <label for="recipe-ingredients">Ingredients:</label>
-      <input name="recipe-ingredients" type="text" id="recipe-ingredients" value="{{recipe.ingredients}}"/>
+      <input name="recipe-ingredients" type="text" id="recipe-ingredients" value="{{recipe.ingredients}}"/><br><br>
     </div>
     <div>
       {{recipe.vote_count}}

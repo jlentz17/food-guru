@@ -339,6 +339,9 @@ body {
     color: var(--text-prmry);
 }
 
+.edit-that-recipe {
+    color: white;
+}
 /* comments page --------------------------------------------*/
 /* .home-recipes {
     background-color: var(--prmry-color);
