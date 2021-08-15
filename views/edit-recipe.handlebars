@@ -2,16 +2,17 @@
   <a href="/dashboard">&larr; Back To Dashboard</a>
   <h2>Edit That Recipe</h2>
   <form class="edit-recipe-form">
-
-    <label for="recipe-title">Title:</label>
-    <input name="recipe-title" type="text" id="recipe-title" value="{{recipe.title}}" />
-
-    <label for="recipe-content">Recipe Content:</label>
-    <input name="recipe-content" type="text" id="recipe-content" value="{{recipe.content}}"/>
-
-    <label for="recipe-ingredients">Ingredients:</label>
-    <input name="recipe-ingredients" type="text" id="recipe-ingredients" value="{{recipe.ingredients}}"/>
-      
+    <div>
+      <label for="recipe-title">Title:</label>
+      <input name="recipe-title" type="text" id="recipe-title" value="{{recipe.title}}" />
+    </div>
+    <div>
+      <label for="recipe-content">Recipe Content:</label>
+      <input name="recipe-content" type="text" id="recipe-content" value="{{recipe.content}}"/>
+    </div>
+    <div>
+      <label for="recipe-ingredients">Ingredients:</label>
+      <input name="recipe-ingredients" type="text" id="recipe-ingredients" value="{{recipe.ingredients}}"/>
     </div>
     <div>
       {{recipe.vote_count}}
@@ -22,20 +23,23 @@
       <a href="/recipes/{{recipe.id}}">{{recipe.comments.length}}
         {{format_plural "comment" recipe.comments.length}}</a>
     </div>
-    <button type="submit">Save Recipe</button>
-    <button type="button" class="delete-recipe-btn">Delete Recipe</button>
+    <div>
+      <button type="submit">Save Recipe</button>
+      <button type="button" class="delete-recipe-btn">Delete Recipe</button>
+    </div>
   </form>
 </article>
 
-<form class="form-comment">
+<form class="form-comment-container form-comment">
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea name="comment-body" class="comment-section"></textarea>
   </div>
 
-  <div>
-    <button type="submit">Add Comment</button>
+  <div class="comment-submit-container">
+    <button type="submit" class="comment-submit">Add Comment</button>
   </div>
 </form>
+
 
 {{> comments recipe.comments}}
 
