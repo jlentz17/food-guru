@@ -5,7 +5,8 @@ async function newFormHandler(event) {
   const ingredients = document.querySelector(
     'input[name="recipe-ingredients"]'
   ).value;
-  const category_id = document.querySelector('input[name="category"]').value;
+  const category_dropdown = document.getElementById('category');
+  const category_id = category_dropdown.options[category_dropdown.selectedIndex].value;
   const recipe_content = document.querySelector(
     'input[name="recipe-content"]'
   ).value;
