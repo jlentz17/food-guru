@@ -1,5 +1,6 @@
 // Bring in router, and models
 const router = require("express").Router();
+const { DataTypes } = require("sequelize/types");
 const { User, Recipe, Category, Vote, Comment } = require("../../models");
 // // Tested routes to make sure they were connected and hashed passwords correctly
 
@@ -168,4 +169,3 @@ router.delete("/:id", (req, res) => {
 
 // Export
 module.exports = router;
-
