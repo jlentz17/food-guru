@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    height: 100vh;
+}
+
+:root {
+    --prmry-color: #F4BA84;
+    --scndry-color: #595959;
+    --text-prmry: white;
+    --text-scndry: black;
+}
+
+.wrapper {
+    background-image: url(../assets/pexels-yente-van-eynde-2403392.jpeg);
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+}
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo-container {
+    margin: 0px 2%;
+    width: 20%;
+}
+
+.nav-menu {
+    display: flex;
+    margin-left: 55%;
+}
+
+.sitename {
+    color: var(--text-prmry);
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.nav-txt {
+    color: var(--text-prmry);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 20px;
+    font-size: 25px;
+}
+
+/*main content-------------------*/
+.main-container {
+    height: 75%;
+}
+
+.main-inner-content {
+    position: relative;
+    top: 35vh;
+    left: 3%;
+    color: var(--text-prmry);
+    width: 70%;
+}
+
+.feature-name {
+    font-size: 25px;
+}
+
+.feature-font {
+    font-size: 60px;
+    line-height: 55px;
+    padding: 10px 0;
+}
+
+.subtitle {
+    font-size: 30px;
+}
+
+.line {
+    border: solid white 2px;
+    width: 5%;
+    margin: 15px 0;
+}
+
+.copy-content {
+    text-align: center;
+    color: var(--text-prmry);
+    padding: 30px;
+    background-color: black;
+    line-height: 20px;
+}
+
+/* login-handlebars ---------------------------------*/
+.login-form-container {
+    position: relative;
+    top: 10%;
+    left: 20%;
+}
+
+.form-header {
+    background-color: var(--prmry-color);
+    border-radius: 25px 25px 0 0;
+    padding: 10px 30px;
+    color: var(--text-prmry);
+}
+
+.form-content {
+    display: grid;
+    padding: 0 30px 30px 30px;
+}
+
+.login-form, .signup-form {
+    display: grid;
+    background-color: white;
+    border-radius: 25px;
+    width: 50%;
+    margin: 30px 0;
+    color: var(--scndry-color);
+}
+
+.login-form input, .signup-form input {
+    width: 50%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+
+.login-form input:focus, .signup-form input:focus {
+    outline: none;
+}
+
+.login-form button, .signup-form button {
+    background-color:  var(--prmry-color);
+    color: var(--text-prmry);
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    margin: 30px 0 0 0;
+    border-radius: 20px;
+    border: none;
+    width: 200px;
+    transition: .5s ease;
+}
+
+.login-form button:hover, .signup-form button:hover {
+    background-color:  var(--scndry-color);
+    transition: .5s ease;
+}
+
+.login-form button:active, .signup-form button:active {
+    background-color:  var(--prmry-color);
+    transition: .5s ease;
+}
+
+.form-line {
+    width: 20%;
+    border: solid white 2px;
+    margin: 10px 0;
+}
+
+/* logged in style ------------------------------------ */
+.btn-no-style {
+    background-color: transparent;
+    color: var(--text-prmry);
+    font-weight: bold;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    margin-left: 40px;
+    transition: .5s ease;
+}
+
+.btn-no-style:hover {
+    color: var(--prmry-color);
+    transition: .5s ease;
+    cursor: pointer;
+}
+
+/* add new recipe -------------------------- */
+.recipe-form-container {
+    margin-left: 35%;
+}
+
+.recipe-content-container {
+    display: grid;
+    padding: 30px 30px 30px 30px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.recipe-content-container input {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 15px;
+    padding-left: 15px;
+}
+
+.recipe-content-container button:hover{
+    background-color:  var(--scndry-color);
+    transition: .5s ease;
+}
+
+#recipe-content {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 15px;
+}
+
+.your-recipe-container {
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    margin: 20px 30px;
+}
+
+.your-recipe-inner-content {
+    padding: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+.your-recipe-header {
+    background-color: var(--prmry-color);
+    border-radius: 25px 25px 0 0;
+    padding: 10px 30px;
+    color: var(--text-prmry);
+}
+
+.your-recipe-title {
+    font-size: 20px;
+}
+
+.your-recipe-subtitle {
+    font-weight: 600;
+}
+
+.edit-link {
+    background-color: var(--prmry-color);
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: var(--text-prmry);
+    font-weight: bold;
+    font-size: 20px;
+    transition: .5s ease;
+}
+
+.edit-link:hover {
+    background-color: var(--scndry-color);
+    transition: .5s ease;
+}
+
+.hide {
+    display: none;
+}
+
+/* edit recipes ------------------------------------------*/
+.dashboard-btn {
+    background-color: var(--prmry-color);
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    text-decoration: none;
+    padding: 5px 10px;
+    color: var(--text-scndry);
+    font-weight: bold;
+    margin: 30px 30px;
+}
+
+.edit-recipe-form {
+    background-color: white;
+    border-radius: 25px;
+    margin: 40px 30px 30px;
+}
+
+.recipe-form-container {
+    padding: 20px;
+}
+
+
+.form-comment-container {
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 30px;
+    border-radius: 25px;
+}
+
+.comment-section {
+    width: 100%;
+    height: 100px;
+    border-radius: 25px 25px 0 0;
+    outline: none;
+    padding-left: 30px;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.comment-submit-container {
+    display: grid;
+}
+
+.comment-submit {
+    background-color: var(--prmry-color);
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    text-decoration: none;
+    padding: 5px 10px;
+    height: 50px;
+    width: 30%;
+    color: var(--text-scndry);
+    font-weight: bold;
+    font-size: 20px;
+    margin: 30px 30px;
+    transition: .5s ease;
+    position: relative;
+    left: 32%;
+}
+
+.comment-submit:hover {
+    background-color: var(--scndry-color);
+    transition: .5s ease;
+    color: var(--text-prmry);
+}
+
+.edit-that-recipe {
+    color: white;
+}
+/* comments page --------------------------------------------*/
+/* .home-recipes {
+    background-color: var(--prmry-color);
+    border-radius: 15px;
+    margin: 200px 30px 20px 30px;
+    padding: 10px;
+    height: 410px;
+} */
+
+/* .new-recipe-inner {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    height: 300px;
+    font-size: 40px;
+    font-weight: 600;
+}
+.new-recipe-title {
+    background-color: white;
+    border-radius: 15px;
+    margin: 10px 0;
+    padding: 10px 30px;
+    font-size: 20px;
+} */
+
+.comment-body {
+    margin: 10px;
+    width: 97vw;
+    height: 200px;
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.comment-body:focus {
+    outline: none;
+    border: none;
+}
+
+.comment-btn-container {
+    display: grid;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-container-btns {
+    background-color: var(--prmry-color);
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px 0;
+    color: white;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    transition: .5s ease;
+}
+
+.comment-container-btns:hover {
+    background-color: var(--scndry-color);
+    transition: .5s ease;
+}
+
+/* comments ------------------------*/
+.comments {
+    margin: 30px;
+    background-color: var(--prmry-color);
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.meta {
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
+
+.text {
+    margin: 0px 0px 30px 0px;
+    color: var(--text-scndry);
+    font-size: 18px;
+}
+
+.comment-line {
+    width: 5%;
+    border: solid black 1px;
+    margin: 10px 0;
+}

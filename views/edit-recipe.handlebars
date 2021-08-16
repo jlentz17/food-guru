@@ -1,0 +1,49 @@
+<article>
+  <h1><a href="/dashboard">&larr; Back To Dashboard</a>
+  </h1><br>
+  <h2 class="edit-that-recipe">Edit That Recipe</h2>
+  <form class="edit-recipe-form recipe-content-container">
+    <div class="your-recipe-title">
+      <label for="recipe-title">Title:</label>
+      <input name="recipe-title" type="text" id="recipe-title"  value="{{recipe.title}}" /> <br><br>
+    </div>
+    <div class="your-recipe-subtitle">
+      <label for="recipe-content">Recipe Content:</label>
+      <input name="recipe-content" type="text" id="recipe-content" value="{{recipe.content}}"/> <br><br>
+    </div>
+    <div class="your-recipe-subtitle">
+      <label for="recipe-ingredients">Ingredients:</label>
+      <input name="recipe-ingredients" type="text" id="recipe-ingredients" value="{{recipe.ingredients}}"/><br><br>
+    </div>
+    <div>
+      {{recipe.vote_count}}
+      {{format_plural "point" recipe.vote_count}}
+      by you on
+      {{format_date recipe.created_at}}
+      |
+      <a href="/recipes/{{recipe.id}}">{{recipe.comments.length}}
+        {{format_plural "comment" recipe.comments.length}}</a>
+    </div>
+    <div>
+      <button type="submit" class="edit-link">Save Recipe</button>
+      <button type="button" class="delete-recipe-btn edit-link">Delete Recipe</button>
+    </div>
+  </form>
+</article>
+
+<form class="form-comment-container form-comment">
+  <div>
+    <textarea name="comment-body" class="comment-section"></textarea>
+  </div>
+
+  <div class="comment-submit-container">
+    <button type="submit" class="comment-submit">Add Comment</button>
+  </div>
+</form>
+
+
+{{> comments recipe.comments}}
+
+<script src="/javascript/comment.js"></script>
+<script src="/javascript/delete-recipe.js"></script>
+<script src="/javascript/edit-recipe.js"></script>

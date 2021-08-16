@@ -1,0 +1,19 @@
+<article class="your-recipe-inner-content new-recipe">
+
+  <div class="new-recipe-title">
+    <h2></h2>
+  </div>
+  
+  <div class="new-recipe-inner new-recipe">
+    <div class="recipe-title">
+      <a href="/recipe/{{id}}" target="_blank">{{title}}</a>
+      <span>({{ingredients}})</span>
+      <span>{{recipe_content}}</span>
+    </div>
+    <div class="meta">
+      {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}} |
+      <a href="/recipe/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    </div>
+  </div>
+  
+</article>
