@@ -1,4 +1,4 @@
-const axios = require("axios");
+// const axios = require("axios");
 
 async function signupFormHandler(event) {
     event.preventDefault();
@@ -8,8 +8,8 @@ async function signupFormHandler(event) {
     const password = document.querySelector('#password-signup').value.trim();
   
     if (username && email && password) {
-      const response = await axios.post('/api/users', {
-        // method: 'post',
+      const response = await fetch('/api/users', {
+        method: 'post',
         body: JSON.stringify({
           username,
           email,

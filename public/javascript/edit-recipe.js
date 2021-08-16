@@ -1,4 +1,4 @@
-const axios = require("axios");
+// const axios = require("axios");
 
 async function editFormHandler(event) {
   event.preventDefault();
@@ -8,8 +8,8 @@ async function editFormHandler(event) {
   const id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
-  const response = await axios.put(`/api/recipes/${id}`, {
-    // method: "PUT",
+  const response = await fetch(`/api/recipes/${id}`, {
+    method: "PUT",
     body: JSON.stringify({
       title,
       content,

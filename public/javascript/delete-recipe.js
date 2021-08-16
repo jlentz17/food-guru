@@ -1,4 +1,4 @@
-const axios = require("axios");
+// const axios = require("axios");
 
 async function deleteFormHandler(event) {
     event.preventDefault();
@@ -6,8 +6,8 @@ async function deleteFormHandler(event) {
     const id = window.location.toString().split("/")[
       window.location.toString().split("/").length - 1
     ];
-    const response = await axios.delete(`/api/recipes/${id}`, {
-      // method: "DELETE",
+    const response = await fetch(`/api/recipes/${id}`, {
+      method: "DELETE",
     });
   
     if (response.ok) {
