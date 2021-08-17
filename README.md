@@ -66,6 +66,7 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 * [Express.js](https://expressjs.com/)
 * [MySql2](https://www.npmjs.com/package/mysql2)
 * [Sequelize](https://sequelize.org/)
+* [Mocha](https://mochajs.org/)
 
 
 ## Contributors
