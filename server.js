@@ -27,7 +27,7 @@ const sess = {
 // Middleware
 app.use(session(sess));
 
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers })
 
 app.set("view engine", "handlebars");
 app.engine("handlebars", hbs.engine);
